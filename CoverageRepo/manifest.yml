@@ -1,0 +1,12 @@
+applications:
+- name: pcf-interest-repo-service
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  timeout: 120
+  path: target/coverage-repo-pcf-demo.jar
+  routes:
+  - route: pcf-demo-repo-app1.cfapps.io
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git 
+  stack: cflinuxfs3

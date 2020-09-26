@@ -1,0 +1,14 @@
+applications:
+- name: pcf-interest-calc-service
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  timeout: 120
+  path: target/coverage-calc-pcf-demo.jar
+  routes:
+  - route: pcf-demo-calc-app1.cfapps.io
+  env:
+    REPO_URI: https://pcf-demo-repo-app1.cfapps.io
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git 
+  stack: cflinuxfs3
